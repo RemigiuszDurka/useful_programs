@@ -1,16 +1,12 @@
-<div style="font-family: 'Times New Roman', Times, serif;">
-<h1 style="font-size: 2.5em;">Klasyczne postacie z polskich komiksów</h1>
+# Klasyczne postacie z polskich komiksów
 
-<ol>
-  <li>Kajko — „Kajko i Kokosz”</li>
-  <li>Kokosz — „Kajko i Kokosz”</li>
-  <li>Tytus — „Tytus, Romek i A’Tomek”</li>
-  <li>Romek — „Tytus, Romek i A’Tomek”</li>
-  <li>A’Tomek — „Tytus, Romek i A’Tomek”</li>
-  <li>Kleks — „Jonka, Jonek i Kleks”</li>
-  <li>Kapitan Żbik — „Kapitan Żbik”</li>
-  <li>Kajtek — „Kajtek i Koko”</li>
-  <li>Koko — „Kajtek i Koko”</li>
-  <li>Hans Kloss — „Kapitan Kloss”</li>
-</ol>
-</div>
+1. Kajko — „Kajko i Kokosz”
+2. Kokosz — „Kajko i Kokosz”
+3. Tytus — „Tytus, Romek i A’Tomek”
+4. Romek — „Tytus, Romek i A’Tomek”
+5. A’Tomek — „Tytus, Romek i A’Tomek”
+6. Kleks — „Jonka, Jonek i Kleks”
+7. Kapitan Żbik — „Kapitan Żbik”
+8. Kajtek — „Kajtek i Koko”
+9. Koko — „Kajtek i Koko”
+10. Hans Kloss — „Kapitan Kloss”
