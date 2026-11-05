@@ -198,48 +198,9 @@ Jest to graniczna szybkość dla idealizowanego spadania pionowego przy stałych
 
 Porównujemy lot modelowej piłki baseballowej wyrzuconej z wysokości $1{,}50\,\mathrm{m}$ z szybkością $40{,}0\,\mathrm{m/s}$. Gęstość powietrza przyjmujemy jako $\rho=1{,}225\,\mathrm{kg/m^3}$. Parametry piłki wynoszą: masa $m=0{,}145\,\mathrm{kg}$, promień $r=0{,}0366\,\mathrm{m}$ i współczynnik oporu $C_d=0{,}47$. Pole powierzchni czołowej obliczamy ze wzoru $A=\pi r^2$. Porównujemy wyniki dla trzech kątów wyrzutu, pozostawiając pozostałe parametry bez zmian.
 
-### 4.1. Zmiana kąta wyrzutu
+### 4.1. Główny przykład
 
-| Kąt $\theta$ | Model | Czas lotu [s] | Maks. wysokość [m] | Zasięg [m] |
-| :---: | :--- | ---: | ---: | ---: |
-| $30^\circ$ | bez oporu | 4,151 | 21,887 | 143,800 |
-| $30^\circ$ | opór kwadratowy | 3,556 | 16,349 | 83,084 |
-| $45^\circ$ | bez oporu | 5,819 | 42,275 | 164,585 |
-| $45^\circ$ | opór kwadratowy | 4,782 | 28,960 | 85,603 |
-| $60^\circ$ | bez oporu | 7,105 | 62,662 | 142,109 |
-| $60^\circ$ | opór kwadratowy | 5,722 | 40,947 | 71,176 |
-
-Wartości dla modelu bez oporu obliczono analitycznie. Wyniki dla modelu z oporem uzyskano numerycznie metodą Rungego–Kutty czwartego rzędu, przy maksymalnym kroku całkowania $0{,}0005\,\mathrm{s}$. Dla przyjętych parametrów kąt $45^\circ$ zapewnia największy zasięg spośród trzech badanych kątów w obu modelach. Nie jest to jednak reguła uniwersalna — optymalny kąt zależy między innymi od wysokości początkowej, szybkości początkowej i parametrów oporu.
-
-Przy kącie $45^\circ$ uwzględnienie oporu zmniejsza zasięg o około $48\%$, maksymalną wysokość o około $31\%$, a czas lotu o około $18\%$. Różnice te wynikają z zależności siły oporu od wartości i kierunku prędkości. Nie można więc poprawnie uwzględnić oporu przez samo zmniejszenie przyspieszenia grawitacyjnego.
-
-### 4.2. Trzy wykresy dla kąta $45^\circ$
-
-Pierwszy wykres porównuje tory piłki, drugi przedstawia jej wysokość w funkcji czasu, a trzeci — szybkość. Wszystkie wykresy dotyczą tych samych warunków początkowych i modeli co wiersze tabeli dla kąta $45^\circ$.
-
-![Tor piłki dla kąta 45 stopni bez oporu powietrza i z oporem kwadratowym](wykres_toru.svg?v=2)
-
-_Rysunek 4. Uwzględnienie oporu obniża wierzchołek toru i zmniejsza zasięg._
-
-![Wysokość piłki w funkcji czasu dla obu modeli](wykres_wysokosci.svg?v=2)
-
-_Rysunek 5. Uwzględnienie oporu zmniejsza maksymalną wysokość i skraca czas lotu._
-
-![Szybkość piłki w funkcji czasu dla obu modeli](wykres_szybkosci.svg?v=2)
-
-_Rysunek 6. Bez oporu szybkość jest najmniejsza w wierzchołku toru. Przy uwzględnieniu oporu zmniejsza się również pozioma składowa prędkości._
-
-### 4.3. Jak odczytać wynik symulacji?
-
-![Schemat obliczeń: od parametrów startowych i modelu sił do symulacji i wyników](schemat_obliczen.svg?v=2)
-
-_Rysunek 7. Symulacja z oporem kończy się, gdy algorytm całkujący wykryje, że piłka osiągnęła płaszczyznę lądowania $y=0$._
-
-Przy kącie $30^\circ$ piłka osiąga niższą wysokość maksymalną i ma krótszy czas lotu niż przy kącie $45^\circ$, ale większa część jej prędkości początkowej jest skierowana poziomo. Przy kącie $60^\circ$ piłka wznosi się najwyżej i pozostaje w powietrzu najdłużej, lecz mniejsza pozioma składowa prędkości początkowej ogranicza zasięg. Opór powietrza dodatkowo zmniejsza zasięg, ponieważ działa przeciwnie do wektora prędkości i wpływa na obie jego składowe.
-
-### 4.4. Dodatkowy przykład
-
-W tym dodatkowym przykładzie zachowujemy parametry piłki i powietrza oraz wysokość początkową z poprzedniego przykładu. Zmieniamy tylko szybkość i kąt wyrzutu. Początkowy wektor prędkości rozkładamy na składowe:
+W głównym przykładzie zachowujemy parametry piłki i powietrza oraz wysokość początkową podane powyżej. Zmieniamy tylko szybkość i kąt wyrzutu. Początkowy wektor prędkości rozkładamy na składowe:
 
 $$
 \begin{aligned}
@@ -257,7 +218,46 @@ _Rysunek 8. Wektor prędkości początkowej ma wartość 36 m/s i jest nachylony
 | Bez oporu powietrza | 4,177 | 22,155 | 124,675 |
 | Z oporem kwadratowym | 3,626 | 16,943 | 75,314 |
 
-Bez oporu pozioma składowa prędkości pozostaje stała, a pionowa zmienia się pod wpływem przyspieszenia grawitacyjnego $g$. Po uwzględnieniu oporu obie składowe prędkości zmieniają się w czasie, a tor ma mniejszy zasięg i wysokość maksymalną. Jest to osobny przykład; nie należy do porównania kątów przedstawionego w punkcie 4.1.
+Bez oporu pozioma składowa prędkości pozostaje stała, a pionowa zmienia się pod wpływem przyspieszenia grawitacyjnego $g$. Po uwzględnieniu oporu obie składowe prędkości zmieniają się w czasie, a tor ma mniejszy zasięg i wysokość maksymalną. Jest to osobny przykład; nie należy do porównania kątów przedstawionego w punkcie 4.2.
+
+### 4.2. Przykład dodatkowy: zmiana kąta wyrzutu
+
+| Kąt $\theta$ | Model | Czas lotu [s] | Maks. wysokość [m] | Zasięg [m] |
+| :---: | :--- | ---: | ---: | ---: |
+| $30^\circ$ | bez oporu | 4,151 | 21,887 | 143,800 |
+| $30^\circ$ | opór kwadratowy | 3,556 | 16,349 | 83,084 |
+| $45^\circ$ | bez oporu | 5,819 | 42,275 | 164,585 |
+| $45^\circ$ | opór kwadratowy | 4,782 | 28,960 | 85,603 |
+| $60^\circ$ | bez oporu | 7,105 | 62,662 | 142,109 |
+| $60^\circ$ | opór kwadratowy | 5,722 | 40,947 | 71,176 |
+
+Wartości dla modelu bez oporu obliczono analitycznie. Wyniki dla modelu z oporem uzyskano numerycznie metodą Rungego–Kutty czwartego rzędu, przy maksymalnym kroku całkowania $0{,}0005\,\mathrm{s}$. Dla przyjętych parametrów kąt $45^\circ$ zapewnia największy zasięg spośród trzech badanych kątów w obu modelach. Nie jest to jednak reguła uniwersalna — optymalny kąt zależy między innymi od wysokości początkowej, szybkości początkowej i parametrów oporu.
+
+Przy kącie $45^\circ$ uwzględnienie oporu zmniejsza zasięg o około $48\%$, maksymalną wysokość o około $31\%$, a czas lotu o około $18\%$. Różnice te wynikają z zależności siły oporu od wartości i kierunku prędkości. Nie można więc poprawnie uwzględnić oporu przez samo zmniejszenie przyspieszenia grawitacyjnego.
+
+### 4.3. Przykład dodatkowy: trzy wykresy dla kąta $45^\circ$
+
+Pierwszy wykres porównuje tory piłki, drugi przedstawia jej wysokość w funkcji czasu, a trzeci — szybkość. Wszystkie wykresy dotyczą tych samych warunków początkowych i modeli co wiersze tabeli dla kąta $45^\circ$.
+
+![Tor piłki dla kąta 45 stopni bez oporu powietrza i z oporem kwadratowym](wykres_toru.svg?v=2)
+
+_Rysunek 4. Uwzględnienie oporu obniża wierzchołek toru i zmniejsza zasięg._
+
+![Wysokość piłki w funkcji czasu dla obu modeli](wykres_wysokosci.svg?v=2)
+
+_Rysunek 5. Uwzględnienie oporu zmniejsza maksymalną wysokość i skraca czas lotu._
+
+![Szybkość piłki w funkcji czasu dla obu modeli](wykres_szybkosci.svg?v=2)
+
+_Rysunek 6. Bez oporu szybkość jest najmniejsza w wierzchołku toru. Przy uwzględnieniu oporu zmniejsza się również pozioma składowa prędkości._
+
+### 4.4. Jak odczytać wyniki symulacji?
+
+![Schemat obliczeń: od parametrów startowych i modelu sił do symulacji i wyników](schemat_obliczen.svg?v=2)
+
+_Rysunek 7. Symulacja z oporem kończy się, gdy algorytm całkujący wykryje, że piłka osiągnęła płaszczyznę lądowania $y=0$._
+
+Przy kącie $30^\circ$ piłka osiąga niższą wysokość maksymalną i ma krótszy czas lotu niż przy kącie $45^\circ$, ale większa część jej prędkości początkowej jest skierowana poziomo. Przy kącie $60^\circ$ piłka wznosi się najwyżej i pozostaje w powietrzu najdłużej, lecz mniejsza pozioma składowa prędkości początkowej ogranicza zasięg. Opór powietrza dodatkowo zmniejsza zasięg, ponieważ działa przeciwnie do wektora prędkości i wpływa na obie jego składowe.
 
 ## 5. Kod i odtwarzanie wyników
 
