@@ -1,0 +1,1 @@
+Suma kwadratów liczb od 1 do 100 wynosi: 338350

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="550" viewBox="0 0 900 550" role="img" aria-labelledby="title desc">
+  <title id="title">Tor piłki z oporem powietrza i bez oporu</title>
+  <desc id="desc">Porównanie toru piłki przy kącie wyrzutu 45 stopni. Tor bez oporu sięga około 165 metrów, a tor z oporem około 86 metrów.</desc>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="axisArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#000000"/></marker>
+  </defs>
+  <g stroke="#d1d5db" stroke-width="1">
+    <path d="M90 390H830M90 310H830M90 230H830M90 150H830M90 70H830"/>
+    <path d="M255 70V470M420 70V470M585 70V470M750 70V470"/>
+  </g>
+  <path d="M90 470V70" fill="none" stroke="#000000" stroke-width="2.5" marker-end="url(#axisArrow)"/>
+  <path d="M90 470H830" fill="none" stroke="#000000" stroke-width="2.5" marker-end="url(#axisArrow)"/>
+  <g font-family="'Times New Roman', Times, serif" font-size="17" fill="#000000" text-anchor="end">
+    <text x="78" y="476">0</text><text x="78" y="396">10</text><text x="78" y="316">20</text><text x="78" y="236">30</text><text x="78" y="156">40</text><text x="78" y="76">50</text>
+  </g>
+  <g font-family="'Times New Roman', Times, serif" font-size="17" fill="#000000" text-anchor="middle">
+    <text x="90" y="500">0</text><text x="255" y="500">40</text><text x="420" y="500">80</text><text x="585" y="500">120</text><text x="750" y="500">160</text>
+  </g>
+  <text x="460" y="535" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">Odległość pozioma x [m]</text>
+  <text x="25" y="270" transform="rotate(-90 25 270)" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">Wysokość y [m]</text>
+  <path d="M96 458 C210 250 328 118 440 118 C570 118 698 315 768 470" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M96 458 C165 350 220 238 285 232 C350 226 405 360 443 470" fill="none" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="440" cy="118" r="7" fill="#2563eb"/><circle cx="285" cy="232" r="7" fill="#dc2626"/>
+  <g font-family="'Times New Roman', Times, serif" font-size="18" fill="#000000">
+    <path d="M600 35H640" stroke="#2563eb" stroke-width="5"/><text x="650" y="41">Bez oporu</text>
+    <path d="M745 35H785" stroke="#dc2626" stroke-width="5"/><text x="795" y="41">Z oporem</text>
+  </g>
+</svg>

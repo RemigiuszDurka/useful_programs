@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Etapy lotu ciała</title>
+  <desc id="desc">Tor paraboliczny bez oporu z oznaczonym startem, wierzchołkiem i lądowaniem.</desc>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="blueArrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#2563eb"/></marker>
+    <marker id="redArrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#dc2626"/></marker>
+    <marker id="yellowArrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#eab308"/></marker>
+  </defs>
+  <path d="M90 350H830" stroke="#000000" stroke-width="3"/>
+  <path d="M105 330C250 90 560 90 800 350" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <circle cx="105" cy="330" r="10" fill="#dc2626"/>
+  <circle cx="420" cy="153" r="9" fill="#eab308"/>
+  <circle cx="800" cy="350" r="10" fill="#2563eb"/>
+  <path d="M175 270L215 215" stroke="#dc2626" stroke-width="4" marker-end="url(#redArrow)"/>
+  <path d="M398 153H470" stroke="#2563eb" stroke-width="4" marker-end="url(#blueArrow)"/>
+  <path d="M660 225L697 282" stroke="#eab308" stroke-width="4" marker-end="url(#yellowArrow)"/>
+  <text x="78" y="390" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">wyrzut</text>
+  <text x="350" y="115" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">wierzchołek: vᵧ = 0</text>
+  <text x="757" y="390" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">lądowanie</text>
+  <text x="150" y="180" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">wznoszenie</text>
+  <text x="705" y="195" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">opadanie</text>
+  <text x="96" y="40" font-family="'Times New Roman', Times, serif" font-size="22" font-weight="700" fill="#000000">Bez oporu: pozioma składowa prędkości jest stała</text>
+</svg>

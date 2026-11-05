@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="370" viewBox="0 0 900 370" role="img" aria-labelledby="title desc">
+  <title id="title">Schemat obliczeń rzutu ukośnego</title>
+  <desc id="desc">Parametry początkowe służą do wyznaczenia równań ruchu, rozwiązania numerycznego, chwili lądowania i wykresów.</desc>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#2563eb"/></marker>
+    <marker id="arrowYellow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#eab308"/></marker>
+  </defs>
+  <g font-family="'Times New Roman', Times, serif" text-anchor="middle">
+    <rect x="35" y="125" width="175" height="105" rx="12" fill="none" stroke="#2563eb" stroke-width="3"/>
+    <text x="122" y="163" font-size="20" font-weight="700" fill="#000000">Dane początkowe</text>
+    <text x="122" y="195" font-size="18" fill="#000000">m, v₀, θ, y₀</text>
+    <rect x="255" y="125" width="175" height="105" rx="12" fill="none" stroke="#dc2626" stroke-width="3"/>
+    <text x="342" y="163" font-size="20" font-weight="700" fill="#000000">Model sił</text>
+    <text x="342" y="195" font-size="18" fill="#000000">g oraz siła oporu</text>
+    <rect x="475" y="125" width="175" height="105" rx="12" fill="none" stroke="#2563eb" stroke-width="3"/>
+    <text x="562" y="163" font-size="20" font-weight="700" fill="#000000">Całkowanie</text>
+    <text x="562" y="195" font-size="18" fill="#000000">układu równań</text>
+    <rect x="695" y="125" width="170" height="105" rx="12" fill="none" stroke="#eab308" stroke-width="3"/>
+    <text x="780" y="163" font-size="20" font-weight="700" fill="#000000">Wyniki</text>
+    <text x="780" y="195" font-size="18" fill="#000000">tory i parametry</text>
+  </g>
+  <path d="M214 177H244M434 177H464M654 177H684" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M562 232V295H780V242" fill="none" stroke="#eab308" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arrowYellow)"/>
+  <text x="670" y="328" font-family="'Times New Roman', Times, serif" font-size="18" text-anchor="middle" fill="#000000">Zdarzenie y = 0 kończy symulację</text>
+</svg>

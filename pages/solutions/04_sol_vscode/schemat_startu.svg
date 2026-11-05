@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Warunki początkowe rzutu ukośnego</title>
+  <desc id="desc">Piłka startuje z wysokości y zero; prędkość v zero rozkłada się na składowe poziomą i pionową.</desc>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="axisArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#000000"/></marker>
+    <marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#2563eb"/></marker>
+    <marker id="arrowRed" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#dc2626"/></marker>
+    <marker id="arrowYellow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0 0L16 8L0 16Z" fill="#eab308"/></marker>
+  </defs>
+  <path d="M80 355H830" stroke="#000000" stroke-width="3" marker-end="url(#axisArrow)"/>
+  <path d="M150 360V80" stroke="#000000" stroke-width="3" marker-end="url(#axisArrow)"/>
+  <circle cx="150" cy="270" r="13" fill="#dc2626"/>
+  <path d="M160 257L309 160" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M165 270H310" stroke="#dc2626" stroke-width="4" marker-end="url(#arrowRed)"/>
+  <path d="M150 261V185" stroke="#eab308" stroke-width="4" marker-end="url(#arrowYellow)"/>
+  <path d="M220 270A70 70 0 0 0 207 230" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="228" y="246" font-family="'Times New Roman', Times, serif" font-size="22" fill="#000000">θ</text>
+  <text x="235" y="185" font-family="'Times New Roman', Times, serif" font-size="23" font-weight="700" fill="#000000">v₀</text>
+  <text x="227" y="302" font-family="'Times New Roman', Times, serif" font-size="20" fill="#000000">vₓ₀ = v₀ cos(θ)</text>
+  <text x="75" y="200" font-family="'Times New Roman', Times, serif" font-size="20" fill="#000000">vᵧ₀</text>
+  <text x="70" y="300" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000000">wyrzut</text>
+  <text x="111" y="392" font-family="'Times New Roman', Times, serif" font-size="20" fill="#000000">y₀</text>
+  <text x="130" y="65" font-family="'Times New Roman', Times, serif" font-size="21" fill="#000000">y</text>
+  <text x="842" y="364" font-family="'Times New Roman', Times, serif" font-size="21" fill="#000000">x</text>
+  <text x="340" y="110" font-family="'Times New Roman', Times, serif" font-size="23" font-weight="700" fill="#000000">Prędkość początkowa ma dwie składowe</text>
+  <text x="340" y="150" font-family="'Times New Roman', Times, serif" font-size="18" fill="#000000">Kąt mierzymy od poziomu; oś y jest skierowana w górę.</text>
+</svg>
