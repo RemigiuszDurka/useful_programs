@@ -149,7 +149,7 @@ W czasie wznoszenia energia kinetyczna maleje, a potencjalna rośnie. Podczas op
 Dla ciała poruszającego się w powietrzu przyjmujemy często opór proporcjonalny do kwadratu szybkości. Wektor siły jest przeciwnie skierowany do prędkości:
 
 $$
-\vec{F}_{\mathrm{op}} = -\frac{1}{2}\rho C_d A\,v\vec{v}
+\vec{F}_{\mathrm{op}} = -\frac{1}{2}\rho C_d A\thinspace v\vec{v}
 $$
 
 Współczynnik $C_d$ zależy między innymi od kształtu ciała i liczby Reynoldsa. Wprowadzając oznaczenie $k=\tfrac{1}{2}\rho C_d A$, zapisujemy równania składowych ruchu:
@@ -196,22 +196,22 @@ Jest to graniczna szybkość dla idealizowanego spadania pionowego przy stałych
 
 ## 4. Przykład liczbowy i porównanie
 
-Rozpatrujemy modelową piłkę baseballową wyrzuconą z wysokości $1{,}50\,\mathrm{m}$. Gęstość powietrza przyjmujemy jako $\rho=1{,}225\,\mathrm{kg/m^3}$. Parametry piłki wynoszą: masa $m=0{,}145\,\mathrm{kg}$, promień $r=0{,}0366\,\mathrm{m}$ i współczynnik oporu $C_d=0{,}47$. Pole powierzchni czołowej obliczamy ze wzoru $A=\pi r^2$. Podpunkt 4.1 przedstawia osobny rzut z szybkością $36\,\mathrm{m/s}$ i kątem $34^\circ$, natomiast w podpunktach 4.2–4.3 porównujemy kąty wyrzutu przy szybkości $40\,\mathrm{m/s}$; w każdym przypadku pozostałe parametry są takie same.
+Rozpatrujemy modelową piłkę baseballową wyrzuconą z wysokości $1{,}50\thinspace\mathrm{m}$. Gęstość powietrza przyjmujemy jako $\rho=1{,}225\thinspace\mathrm{kg/m^3}$. Parametry piłki wynoszą: masa $m=0{,}145\thinspace\mathrm{kg}$, promień $r=0{,}0366\thinspace\mathrm{m}$ i współczynnik oporu $C_d=0{,}47$. Pole powierzchni czołowej obliczamy ze wzoru $A=\pi r^2$. Podpunkt 4.1 przedstawia osobny rzut z szybkością $36\thinspace\mathrm{m/s}$ i kątem $34^\circ$, natomiast w podpunktach 4.2–4.3 porównujemy kąty wyrzutu przy szybkości $40\thinspace\mathrm{m/s}$; w każdym przypadku pozostałe parametry są takie same.
 
 ### 4.1. Główny przykład
 
-W tym przykładzie przyjmujemy szybkość początkową $36\,\mathrm{m/s}$ i kąt wyrzutu $34^\circ$, zachowując parametry piłki, powietrza i wysokość początkową podane powyżej. Początkowy wektor prędkości rozkładamy na składowe:
+W tym przykładzie przyjmujemy szybkość początkową $36\thinspace\mathrm{m/s}$ i kąt wyrzutu $34^\circ$, zachowując parametry piłki, powietrza i wysokość początkową podane powyżej. Początkowy wektor prędkości rozkładamy na składowe:
 
 $$
 \begin{aligned}
-v_{x0} &= 36\cos(34^\circ) \approx 29{,}85\,\mathrm{m/s},\\
-v_{y0} &= 36\sin(34^\circ) \approx 20{,}13\,\mathrm{m/s}.
+v_{x0} &= 36\cos(34^\circ) \approx 29{,}85\thinspace\mathrm{m/s},\\
+v_{y0} &= 36\sin(34^\circ) \approx 20{,}13\thinspace\mathrm{m/s}.
 \end{aligned}
 $$
 
 ![Rozkład prędkości początkowej 36 metrów na sekundę na składową poziomą i pionową dla kąta 34 stopni](rozklad_predkosci_36_34.svg)
 
-_Rysunek 4. Wektor prędkości początkowej ma wartość $36\,\mathrm{m/s}$ i jest nachylony do poziomu pod kątem $34^\circ$._
+_Rysunek 4. Wektor prędkości początkowej ma wartość 36 m/s i jest nachylony do poziomu pod kątem 34°._
 
 | Model | Czas lotu [s] | Maks. wysokość [m] | Zasięg [m] |
 | :--- | ---: | ---: | ---: |
@@ -231,7 +231,7 @@ Bez oporu pozioma składowa prędkości pozostaje stała, a pionowa zmienia się
 | $60^\circ$ | bez oporu | 7,105 | 62,662 | 142,109 |
 | $60^\circ$ | opór kwadratowy | 5,722 | 40,947 | 71,176 |
 
-Wartości dla modelu bez oporu obliczono analitycznie. Równania z oporem rozwiązano funkcją `solve_ivp` z domyślną metodą RK45 (metoda Dormanda–Prince'a rzędu 5(4)), przy maksymalnym kroku całkowania $0{,}0005\,\mathrm{s}$, tolerancji względnej $10^{-9}$ i bezwzględnej $10^{-11}$. Dla przyjętych parametrów kąt $45^\circ$ zapewnia największy zasięg spośród trzech badanych kątów w obu modelach. Nie jest to jednak reguła uniwersalna — optymalny kąt zależy między innymi od wysokości początkowej, szybkości początkowej i parametrów oporu.
+Wartości dla modelu bez oporu obliczono analitycznie. Równania z oporem rozwiązano funkcją `solve_ivp` z domyślną metodą RK45 (metoda Dormanda–Prince'a rzędu 5(4)), przy maksymalnym kroku całkowania $0{,}0005\thinspace\mathrm{s}$, tolerancji względnej $10^{-9}$ i bezwzględnej $10^{-11}$. Dla przyjętych parametrów kąt $45^\circ$ zapewnia największy zasięg spośród trzech badanych kątów w obu modelach. Nie jest to jednak reguła uniwersalna — optymalny kąt zależy między innymi od wysokości początkowej, szybkości początkowej i parametrów oporu.
 
 Przy kącie $45^\circ$ uwzględnienie oporu zmniejsza zasięg o około $48\%$, maksymalną wysokość o około $31\%$, a czas lotu o około $18\%$. Różnice te wynikają z zależności siły oporu od wartości i kierunku prędkości. Nie można więc poprawnie uwzględnić oporu przez samo zmniejszenie przyspieszenia grawitacyjnego.
 
@@ -241,11 +241,11 @@ Pierwszy wykres porównuje tory piłki, drugi przedstawia jej wysokość w funkc
 
 ![Tor piłki dla kąta 45 stopni bez oporu powietrza i z oporem kwadratowym](wykres_toru.svg)
 
-_Rysunek 5. Tor obliczony dla $v_0=40\,\mathrm{m/s}$ i $\theta=45^\circ$; opór obniża wierzchołek i zmniejsza zasięg._
+_Rysunek 5. Tor obliczony dla v₀ = 40 m/s i θ = 45°; opór obniża wierzchołek i zmniejsza zasięg._
 
 ![Wysokość piłki w funkcji czasu dla obu modeli](wykres_wysokosci.svg)
 
-_Rysunek 6. Wysokość w czasie dla tych samych warunków początkowych: $v_0=40\,\mathrm{m/s}$ i $\theta=45^\circ$._
+_Rysunek 6. Wysokość w czasie dla tych samych warunków początkowych: v₀ = 40 m/s i θ = 45°._
 
 ![Szybkość piłki w funkcji czasu dla obu modeli](wykres_szybkosci.svg)
 
@@ -255,13 +255,13 @@ _Rysunek 7. Szybkość w czasie dla tych samych warunków początkowych. Bez opo
 
 ![Schemat obliczeń: od parametrów startowych i modelu sił do symulacji i wyników](schemat_obliczen.svg)
 
-_Rysunek 8. Symulacja z oporem kończy się, gdy algorytm całkujący wykryje, że piłka osiągnęła płaszczyznę lądowania $y=0$._
+_Rysunek 8. Symulacja z oporem kończy się, gdy algorytm całkujący wykryje osiągnięcie przez piłkę płaszczyzny lądowania y = 0._
 
 Przy kącie $30^\circ$ piłka osiąga niższą wysokość maksymalną i ma krótszy czas lotu niż przy kącie $45^\circ$, ale większa część jej prędkości początkowej jest skierowana poziomo. Przy kącie $60^\circ$ piłka wznosi się najwyżej i pozostaje w powietrzu najdłużej, lecz mniejsza pozioma składowa prędkości początkowej ogranicza zasięg. Opór powietrza dodatkowo zmniejsza zasięg, ponieważ działa przeciwnie do wektora prędkości i wpływa na obie jego składowe.
 
 ## 5. Kod i odtwarzanie wyników
 
-Kod wykorzystuje biblioteki NumPy, SciPy i Matplotlib. Odtwarza wyniki z punktów 4.1–4.3 i generuje cztery ilustracje SVG osadzone w punkcie 4: rozkład prędkości dla $36\,\mathrm{m/s}$ i $34^\circ$ oraz trzy wykresy dla $40\,\mathrm{m/s}$ i $45^\circ$. Dane do krzywych pochodzą bezpośrednio z rozwiązań równań ruchu.
+Kod wykorzystuje biblioteki NumPy, SciPy i Matplotlib. Odtwarza wyniki z punktów 4.1–4.3 i generuje cztery ilustracje SVG osadzone w punkcie 4: rozkład prędkości dla $36\thinspace\mathrm{m/s}$ i $34^\circ$ oraz trzy wykresy dla $40\thinspace\mathrm{m/s}$ i $45^\circ$. Dane do krzywych pochodzą bezpośrednio z rozwiązań równań ruchu.
 
 ### 5.1. Uruchomienie w Google Colabie
 
@@ -501,7 +501,7 @@ Wyniki należy więc interpretować jako porównanie dwóch modeli fizycznych dl
 
 W modelu bez oporu składowa pozioma prędkości jest stała, a pionowa zmienia się pod wpływem grawitacji. Po wyeliminowaniu czasu zależność wysokości od odległości poziomej jest kwadratowa, dlatego tor ma kształt paraboli. Gdy miejsce lądowania znajduje się na tej samej wysokości co miejsce wyrzutu, największy zasięg w tym modelu występuje dla kąta $45^\circ$.
 
-Przy uwzględnieniu oporu kwadratowego siła działa przeciwnie do wektora prędkości, więc zmienia jednocześnie jej składową poziomą i pionową. Tor przestaje być parabolą, a energia mechaniczna maleje. Dla przyjętych parametrów i kąta $45^\circ$ czas lotu skraca się z $5{,}819\,\mathrm{s}$ do $4{,}782\,\mathrm{s}$, maksymalna wysokość spada z $42{,}275\,\mathrm{m}$ do $28{,}960\,\mathrm{m}$, a zasięg z $164{,}585\,\mathrm{m}$ do $85{,}603\,\mathrm{m}$. Oznacza to zmniejszenie tych wielkości odpowiednio o około $18\%$, $31\%$ i $48\%$.
+Przy uwzględnieniu oporu kwadratowego siła działa przeciwnie do wektora prędkości, więc zmienia jednocześnie jej składową poziomą i pionową. Tor przestaje być parabolą, a energia mechaniczna maleje. Dla przyjętych parametrów i kąta $45^\circ$ czas lotu skraca się z $5{,}819\thinspace\mathrm{s}$ do $4{,}782\thinspace\mathrm{s}$, maksymalna wysokość spada z $42{,}275\thinspace\mathrm{m}$ do $28{,}960\thinspace\mathrm{m}$, a zasięg z $164{,}585\thinspace\mathrm{m}$ do $85{,}603\thinspace\mathrm{m}$. Oznacza to zmniejszenie tych wielkości odpowiednio o około $18\%$, $31\%$ i $48\%$.
 
 Porównanie kątów $30^\circ$, $45^\circ$ i $60^\circ$ wskazuje, że w badanym przykładzie największy zasięg uzyskano dla $45^\circ$ zarówno bez oporu, jak i z oporem. Nie jest to jednak dowód, że ten kąt zawsze zapewnia największy zasięg: wynik zależy między innymi od wysokości wyrzutu, szybkości początkowej i parametrów oporu. Wartości z symulacji należy zatem traktować jako wyniki przyjętego modelu, a nie uniwersalne dane dla każdej piłki i sytuacji.
 
