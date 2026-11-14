@@ -196,11 +196,11 @@ Jest to graniczna szybkość dla idealizowanego spadania pionowego przy stałych
 
 ## 4. Przykład liczbowy i porównanie
 
-Porównujemy lot modelowej piłki baseballowej wyrzuconej z wysokości $1{,}50\,\mathrm{m}$ z szybkością $40{,}0\,\mathrm{m/s}$. Gęstość powietrza przyjmujemy jako $\rho=1{,}225\,\mathrm{kg/m^3}$. Parametry piłki wynoszą: masa $m=0{,}145\,\mathrm{kg}$, promień $r=0{,}0366\,\mathrm{m}$ i współczynnik oporu $C_d=0{,}47$. Pole powierzchni czołowej obliczamy ze wzoru $A=\pi r^2$. Porównujemy wyniki dla trzech kątów wyrzutu, pozostawiając pozostałe parametry bez zmian.
+Rozpatrujemy modelową piłkę baseballową wyrzuconą z wysokości $1{,}50\,\mathrm{m}$. Gęstość powietrza przyjmujemy jako $\rho=1{,}225\,\mathrm{kg/m^3}$. Parametry piłki wynoszą: masa $m=0{,}145\,\mathrm{kg}$, promień $r=0{,}0366\,\mathrm{m}$ i współczynnik oporu $C_d=0{,}47$. Pole powierzchni czołowej obliczamy ze wzoru $A=\pi r^2$. Podpunkt 4.1 przedstawia osobny rzut z szybkością $36\,\mathrm{m/s}$ i kątem $34^\circ$, natomiast w podpunktach 4.2–4.3 porównujemy kąty wyrzutu przy szybkości $40\,\mathrm{m/s}$; w każdym przypadku pozostałe parametry są takie same.
 
 ### 4.1. Główny przykład
 
-W głównym przykładzie zachowujemy parametry piłki i powietrza oraz wysokość początkową podane powyżej. Zmieniamy tylko szybkość i kąt wyrzutu. Początkowy wektor prędkości rozkładamy na składowe:
+W tym przykładzie przyjmujemy szybkość początkową $36\,\mathrm{m/s}$ i kąt wyrzutu $34^\circ$, zachowując parametry piłki, powietrza i wysokość początkową podane powyżej. Początkowy wektor prędkości rozkładamy na składowe:
 
 $$
 \begin{aligned}
@@ -209,9 +209,9 @@ v_{y0} &= 36\sin(34^\circ) \approx 20{,}13\,\mathrm{m/s}.
 \end{aligned}
 $$
 
-![Rozkład prędkości początkowej 36 metrów na sekundę na składową poziomą i pionową dla kąta 34 stopni](rozklad_predkosci_36_34.svg?v=2)
+![Rozkład prędkości początkowej 36 metrów na sekundę na składową poziomą i pionową dla kąta 34 stopni](rozklad_predkosci_36_34.svg)
 
-_Rysunek 8. Wektor prędkości początkowej ma wartość 36 m/s i jest nachylony do poziomu pod kątem 34°._
+_Rysunek 4. Wektor prędkości początkowej ma wartość $36\,\mathrm{m/s}$ i jest nachylony do poziomu pod kątem $34^\circ$._
 
 | Model | Czas lotu [s] | Maks. wysokość [m] | Zasięg [m] |
 | :--- | ---: | ---: | ---: |
@@ -231,7 +231,7 @@ Bez oporu pozioma składowa prędkości pozostaje stała, a pionowa zmienia się
 | $60^\circ$ | bez oporu | 7,105 | 62,662 | 142,109 |
 | $60^\circ$ | opór kwadratowy | 5,722 | 40,947 | 71,176 |
 
-Wartości dla modelu bez oporu obliczono analitycznie. Wyniki dla modelu z oporem uzyskano numerycznie metodą Rungego–Kutty czwartego rzędu, przy maksymalnym kroku całkowania $0{,}0005\,\mathrm{s}$. Dla przyjętych parametrów kąt $45^\circ$ zapewnia największy zasięg spośród trzech badanych kątów w obu modelach. Nie jest to jednak reguła uniwersalna — optymalny kąt zależy między innymi od wysokości początkowej, szybkości początkowej i parametrów oporu.
+Wartości dla modelu bez oporu obliczono analitycznie. Równania z oporem rozwiązano funkcją `solve_ivp` z domyślną metodą RK45 (metoda Dormanda–Prince'a rzędu 5(4)), przy maksymalnym kroku całkowania $0{,}0005\,\mathrm{s}$, tolerancji względnej $10^{-9}$ i bezwzględnej $10^{-11}$. Dla przyjętych parametrów kąt $45^\circ$ zapewnia największy zasięg spośród trzech badanych kątów w obu modelach. Nie jest to jednak reguła uniwersalna — optymalny kąt zależy między innymi od wysokości początkowej, szybkości początkowej i parametrów oporu.
 
 Przy kącie $45^\circ$ uwzględnienie oporu zmniejsza zasięg o około $48\%$, maksymalną wysokość o około $31\%$, a czas lotu o około $18\%$. Różnice te wynikają z zależności siły oporu od wartości i kierunku prędkości. Nie można więc poprawnie uwzględnić oporu przez samo zmniejszenie przyspieszenia grawitacyjnego.
 
@@ -239,29 +239,29 @@ Przy kącie $45^\circ$ uwzględnienie oporu zmniejsza zasięg o około $48\%$, m
 
 Pierwszy wykres porównuje tory piłki, drugi przedstawia jej wysokość w funkcji czasu, a trzeci — szybkość. Wszystkie wykresy dotyczą tych samych warunków początkowych i modeli co wiersze tabeli dla kąta $45^\circ$.
 
-![Tor piłki dla kąta 45 stopni bez oporu powietrza i z oporem kwadratowym](wykres_toru.svg?v=2)
+![Tor piłki dla kąta 45 stopni bez oporu powietrza i z oporem kwadratowym](wykres_toru.svg)
 
-_Rysunek 4. Uwzględnienie oporu obniża wierzchołek toru i zmniejsza zasięg._
+_Rysunek 5. Tor obliczony dla $v_0=40\,\mathrm{m/s}$ i $\theta=45^\circ$; opór obniża wierzchołek i zmniejsza zasięg._
 
-![Wysokość piłki w funkcji czasu dla obu modeli](wykres_wysokosci.svg?v=2)
+![Wysokość piłki w funkcji czasu dla obu modeli](wykres_wysokosci.svg)
 
-_Rysunek 5. Uwzględnienie oporu zmniejsza maksymalną wysokość i skraca czas lotu._
+_Rysunek 6. Wysokość w czasie dla tych samych warunków początkowych: $v_0=40\,\mathrm{m/s}$ i $\theta=45^\circ$._
 
-![Szybkość piłki w funkcji czasu dla obu modeli](wykres_szybkosci.svg?v=2)
+![Szybkość piłki w funkcji czasu dla obu modeli](wykres_szybkosci.svg)
 
-_Rysunek 6. Bez oporu szybkość jest najmniejsza w wierzchołku toru. Przy uwzględnieniu oporu zmniejsza się również pozioma składowa prędkości._
+_Rysunek 7. Szybkość w czasie dla tych samych warunków początkowych. Bez oporu osiąga minimum w wierzchołku toru._
 
 ### 4.4. Jak odczytać wyniki symulacji?
 
-![Schemat obliczeń: od parametrów startowych i modelu sił do symulacji i wyników](schemat_obliczen.svg?v=2)
+![Schemat obliczeń: od parametrów startowych i modelu sił do symulacji i wyników](schemat_obliczen.svg)
 
-_Rysunek 7. Symulacja z oporem kończy się, gdy algorytm całkujący wykryje, że piłka osiągnęła płaszczyznę lądowania $y=0$._
+_Rysunek 8. Symulacja z oporem kończy się, gdy algorytm całkujący wykryje, że piłka osiągnęła płaszczyznę lądowania $y=0$._
 
 Przy kącie $30^\circ$ piłka osiąga niższą wysokość maksymalną i ma krótszy czas lotu niż przy kącie $45^\circ$, ale większa część jej prędkości początkowej jest skierowana poziomo. Przy kącie $60^\circ$ piłka wznosi się najwyżej i pozostaje w powietrzu najdłużej, lecz mniejsza pozioma składowa prędkości początkowej ogranicza zasięg. Opór powietrza dodatkowo zmniejsza zasięg, ponieważ działa przeciwnie do wektora prędkości i wpływa na obie jego składowe.
 
 ## 5. Kod i odtwarzanie wyników
 
-Kod wykorzystuje biblioteki NumPy, SciPy i Matplotlib. Odtwarza obliczenia oraz trzy wykresy: toru, wysokości i szybkości piłki. Wykresy są wyświetlane po uruchomieniu, a ich kopie PNG zapisywane w katalogu `wykresy`.
+Kod wykorzystuje biblioteki NumPy, SciPy i Matplotlib. Odtwarza wyniki z punktów 4.1–4.3 i generuje cztery ilustracje SVG osadzone w punkcie 4: rozkład prędkości dla $36\,\mathrm{m/s}$ i $34^\circ$ oraz trzy wykresy dla $40\,\mathrm{m/s}$ i $45^\circ$. Dane do krzywych pochodzą bezpośrednio z rozwiązań równań ruchu.
 
 ### 5.1. Uruchomienie w Google Colabie
 
@@ -272,7 +272,7 @@ Kod wykorzystuje biblioteki NumPy, SciPy i Matplotlib. Odtwarza obliczenia oraz 
 %pip install numpy scipy matplotlib
 ```
 
-3. Skopiuj cały poniższy blok kodu do kolejnej komórki i uruchom ją. Kod oblicza wyniki, wyświetla wykresy i zapisuje je w katalogu `wykresy` w środowisku Colaba. Pliki PNG możesz pobrać z panelu plików.
+3. Skopiuj cały poniższy blok kodu do kolejnej komórki i uruchom ją. Kod oblicza wyniki, wyświetla wykresy i zapisuje pliki SVG w bieżącym katalogu. W Colabie pobierz je z panelu plików, jeśli chcesz zaktualizować ilustracje w repozytorium.
 
 ### 5.2. Uruchomienie lokalne
 
@@ -283,20 +283,16 @@ python -m pip install numpy scipy matplotlib
 python generuj_wykresy.py
 ```
 
-Pliki PNG zostaną zapisane w podkatalogu `wykresy` względem bieżącego katalogu. Przy każdym uruchomieniu kod wyświetli też wykresy w oknie graficznym lub w notatniku. Nie nadpisuje on osadzonych w raporcie ilustracji SVG.
+Pliki SVG zostaną zapisane w bieżącym katalogu, czyli w `pages/solutions/04_sol_vscode`, jeśli uruchomisz polecenia z tego katalogu. Kod nadpisuje generowane ilustracje osadzone w raporcie; schemat obliczeń nie jest generowany przez ten skrypt.
 
 ```python
-from pathlib import Path
 import math
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
-OUT = Path("wykresy")
-OUT.mkdir(parents=True, exist_ok=True)
-
 def zapisz_wykres(nazwa):
-	plt.savefig(OUT / f"{nazwa}.png", dpi=180, bbox_inches="tight")
+	plt.savefig(f"{nazwa}.svg", format="svg", bbox_inches="tight")
 	plt.show()
 	plt.close()
 
@@ -365,7 +361,7 @@ plt.plot(x_drag, y_drag, label="Z oporem kwadratowym", linewidth=2.4)
 plt.scatter([0, range_ideal, range_drag], [y0, 0, 0], s=35, zorder=3)
 plt.xlabel("Odległość pozioma x [m]")
 plt.ylabel("Wysokość y [m]")
-plt.title("Rzut ukośny: porównanie modeli")
+plt.title("Tor piłki: v₀ = 40 m/s, kąt = 45°")
 plt.grid(alpha=0.25)
 plt.legend()
 plt.tight_layout()
@@ -377,7 +373,7 @@ plt.plot(t_ideal, y_ideal, label="Bez oporu", linewidth=2.4)
 plt.plot(t_drag, y_drag, label="Z oporem kwadratowym", linewidth=2.4)
 plt.xlabel("Czas t [s]")
 plt.ylabel("Wysokość y [m]")
-plt.title("Wysokość w czasie dla kąta 45°")
+plt.title("Wysokość w czasie: v₀ = 40 m/s, kąt = 45°")
 plt.grid(alpha=0.25)
 plt.legend()
 plt.tight_layout()
@@ -391,7 +387,7 @@ plt.plot(t_ideal, speed_ideal, label="Bez oporu", linewidth=2.4)
 plt.plot(t_drag, speed_drag, label="Z oporem kwadratowym", linewidth=2.4)
 plt.xlabel("Czas t [s]")
 plt.ylabel("Szybkość v [m/s]")
-plt.title("Szybkość w czasie dla kąta 45°")
+plt.title("Szybkość w czasie: v₀ = 40 m/s, kąt = 45°")
 plt.grid(alpha=0.25)
 plt.legend()
 plt.tight_layout()
@@ -448,9 +444,48 @@ print(f"Bez oporu: {extra_flight_ideal:.3f} s, "
 print(f"Z oporem: {extra_solution.t_events[0][0]:.3f} s, "
 	f"{np.max(extra_solution.y[1]):.3f} m, "
 	f"{extra_solution.y_events[0][0][0]:.3f} m")
+
+# Rysunek z punktu 4.1: wektor i jego składowe dla 36 m/s oraz 34°.
+plt.figure(figsize=(8, 5))
+plt.annotate(
+	"",
+	xy=(extra_vx0, extra_vy0),
+	xytext=(0, 0),
+	arrowprops={"arrowstyle": "->", "color": "#2563eb", "linewidth": 2.8},
+)
+plt.annotate(
+	"",
+	xy=(extra_vx0, 0),
+	xytext=(0, 0),
+	arrowprops={"arrowstyle": "->", "color": "#dc2626", "linewidth": 2.4},
+)
+plt.annotate(
+	"",
+	xy=(extra_vx0, extra_vy0),
+	xytext=(extra_vx0, 0),
+	arrowprops={"arrowstyle": "->", "color": "#eab308", "linewidth": 2.4},
+)
+plt.text(extra_vx0 * 0.34, extra_vy0 * 0.66, "v₀ = 36 m/s")
+plt.text(extra_vx0 * 0.36, -2.0, f"vₓ₀ = {extra_vx0:.2f} m/s")
+plt.text(
+	extra_vx0 - 1.0,
+	extra_vy0 * 0.55,
+	f"vᵧ₀ = {extra_vy0:.2f} m/s",
+	ha="right",
+)
+plt.text(extra_vx0 * 0.18, extra_vy0 * 0.08, "34°")
+plt.xlabel("Składowa pozioma prędkości [m/s]")
+plt.ylabel("Składowa pionowa prędkości [m/s]")
+plt.title("Rozkład prędkości początkowej: 36 m/s, 34°")
+plt.xlim(-2, 40)
+plt.ylim(-4, 26)
+plt.gca().set_aspect("equal", adjustable="box")
+plt.grid(alpha=0.25)
+plt.tight_layout()
+zapisz_wykres("rozklad_predkosci_36_34")
 ```
 
-Poprawność obliczeń można sprawdzić, porównując wydrukowane wartości z danymi w tabeli z uwzględnieniem zaokrągleń. Po zmianie masy, rozmiaru piłki lub współczynnika $C_d$ należy ponownie rozwiązać równania. W modelu z oporem wyniki nie skalują się tak prosto jak w modelu bez oporu.
+Kod zapisuje trzy wykresy dla parametrów z tabeli w punkcie 4.2 (wiersz $45^\circ$) oraz rysunek rozkładu prędkości zgodny z parametrami i tabelą w punkcie 4.1. Poprawność obliczeń można sprawdzić, porównując wydrukowane wartości z tabelami z uwzględnieniem zaokrągleń. Po zmianie masy, rozmiaru piłki lub współczynnika $C_d$ należy ponownie rozwiązać równania. W modelu z oporem wyniki nie skalują się tak prosto jak w modelu bez oporu.
 
 ## 6. Ograniczenia modelu
 
